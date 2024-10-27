@@ -4,7 +4,7 @@ import "./weatherTable.css";
 const WeatherTable = ({ cityData, onDelete }) => {
   return (
     <table className="weather-table">
-      <thead>
+      {/* <thead>
         <tr>
           <th>City</th>
           <th>Description</th>
@@ -13,7 +13,7 @@ const WeatherTable = ({ cityData, onDelete }) => {
           <th>Humidity (%)</th>
           <th>Actions</th>
         </tr>
-      </thead>
+      </thead> */}
       <tbody>
         {cityData.map((city) => (
           <tr key={city.id}>

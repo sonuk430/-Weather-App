@@ -1,18 +1,31 @@
+import { useState } from "react";
 import "./leftSide.css";
-export const LeftSIde = () => {
+
+export const LeftSIde = ({
+  initialCityName,
+  activeIndex,
+  handleCityNameActive,
+  setActiveIndex,
+  indianCities, // Accept indianCities as a prop
+}) => {
   return (
     <>
       <div className="leftSideWrapper">
-        {/* <div> */}
-        <button className="getWeatherBtn">Get Weather</button>
-        {/* </div> */}
-        {/* <div> */}
+        <button className="getWeatherBtn" onClick={handleCityNameActive}>
+          Get Weather
+        </button>
+
         <h2>City</h2>
 
-        <p>City</p>
-        <p>City</p>
-        <p>City</p>
-        {/* </div> */}
+        {indianCities.map((el, index) => (
+          <button
+            key={index}
+            className={`cityButton ${activeIndex === index ? "active" : ""}`} // Add 'active' class if this is the selected button
+            onClick={() => setActiveIndex(index)} // Set the activeIndex directly on button click
+          >
+            {el}
+          </button>
+        ))}
       </div>
     </>
   );

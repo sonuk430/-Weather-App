@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ApiKey } from "../../Utils/WeatherAPI";
 import "./rightSide.css";
 import WeatherTable from "../Table/WeatherTable";
+import TableHeading from "../TableHeading/TableHeading";
 
 const RightSide = () => {
   const [cityNames, setCityNames] = useState(""); // Input from the user
@@ -62,14 +63,17 @@ const RightSide = () => {
       <div className="rightSideSearch">
         <input
           type="text"
-          placeholder="Enter City Names (comma-separated)"
+          placeholder="Enter City Names"
           value={cityNames}
           onChange={handleInputChange}
         />
         <button onClick={handleClick}>🔍</button>
       </div>
+      <TableHeading />
       {cityData.length > 0 ? (
-        <WeatherTable cityData={cityData} onDelete={handleDelete} />
+        <>
+          <WeatherTable cityData={cityData} onDelete={handleDelete} />
+        </>
       ) : (
         <p>No data to display</p>
       )}
