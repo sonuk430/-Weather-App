@@ -4,7 +4,7 @@ import "./rightSide.css";
 import WeatherTable from "../Table/WeatherTable";
 import TableHeading from "../TableHeading/TableHeading";
 
-const RightSide = () => {
+const RightSide = ({ indianCities, activeIndex }) => {
   const [cityNames, setCityNames] = useState(""); // Input from the user
   const [cityData, setCityData] = useState([]); // Weather data for cities
 
@@ -12,6 +12,8 @@ const RightSide = () => {
   function handleInputChange(e) {
     setCityNames(e.target.value);
   }
+
+  console.log(indianCities[activeIndex]);
 
   // Handle search button click to add multiple cities
   function handleClick() {

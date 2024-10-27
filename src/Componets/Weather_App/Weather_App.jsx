@@ -23,7 +23,7 @@ const Weather_App = () => {
 
   function handleCityNameActive() {
     // Log the current city name based on the activeIndex
-    console.log(indianCities[activeIndex]);
+    // console.log(indianCities[activeIndex]);
 
     // Update the activeIndex to the next city, wrapping around if necessary
     setActiveIndex((prev) => (prev + 1) % indianCities.length);
@@ -44,7 +44,7 @@ const Weather_App = () => {
             />
           </div>
           <div className="rightSide">
-            <RightSide />
+            <RightSide indianCities={indianCities} activeIndex={activeIndex} />
           </div>
         </div>
       </div>
