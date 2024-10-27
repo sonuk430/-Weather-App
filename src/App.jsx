@@ -1,7 +1,11 @@
+import Weather_App from "./Componets/Weather_App/Weather_App";
+
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <div>
+        <Weather_App />
+      </div>
     </>
   );
 }
